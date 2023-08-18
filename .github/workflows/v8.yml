@@ -14,7 +14,7 @@ on:
 
 env:
   PATCH_FLAG: true
-  COMMIT: 568979f4d891bafec875fab20f608ff9392f4f29
+  COMMIT: 9310daee62e6e7253c2f0f3ea955cf5558aee80c
   DEPOT_UPLOAD: true
   SRC_UPLOAD: true
   BINARY_UPLOAD: false
@@ -23,7 +23,7 @@ env:
 jobs:
   build:
     # The type of runner that the job will run on
-    runs-on: ubuntu-20.04
+    runs-on: ubuntu-22.04
     if: github.event.repository.owner.id == github.event.sender.id 	
     
     steps:
@@ -34,7 +34,7 @@ jobs:
     - name: init env
       run: |
         sudo apt-get update
-        sudo apt-get -y install pkg-config git subversion curl wget build-essential python xz-utils zip p7zip-full
+        sudo apt-get -y install pkg-config git subversion curl wget build-essential xz-utils zip p7zip-full
     
     # get depot_tools
     - name: depot_tools
